@@ -1,31 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
 
     <item
         android:id="@+id/favFragment"
         android:icon="@drawable/ic_baseline_favorite"
         android:title="Favourite"
-        app:showAsAction="always"
 
         />
     <item
         android:id="@+id/musicFragment"
         android:icon="@drawable/ic_baseline_queue_music"
         android:title="Music"
-        app:showAsAction="always"
         />
     <item
         android:id="@+id/newsFragment"
         android:icon="@drawable/ic_baseline_article"
         android:title="News"
-        app:showAsAction="always"
         />
     <item
         android:id="@+id/placesFragment"
         android:icon="@drawable/ic_baseline_place"
         android:title="Location"
-        app:showAsAction="always"
         />
+
 </menu>

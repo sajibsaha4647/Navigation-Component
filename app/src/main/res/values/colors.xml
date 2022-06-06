@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="bottom_nav_selected_item">#FFEB3B</color>
+    <color name="hash">#dddddd</color>
 </resources>
