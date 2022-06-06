@@ -25,21 +25,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:navGraph="@navigation/navigation" />
 
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/navViewDrower"
-            android:layout_width="300dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            app:labelVisibilityMode="labeled"
-            android:fitsSystemWindows="true"
-            android:background="@color/white"
-            app:headerLayout="@layout/nav_header"
-            app:itemIconTint="@drawable/drower_nav_color"
-            app:itemTextColor="@drawable/drower_nav_color"
-            app:menu="@menu/drower_nav_menu"
-            tools:ignore="MissingConstraints" />
-
-
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomnavigationId"
             android:layout_width="match_parent"
@@ -53,6 +38,15 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navViewDrower"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header"
+        app:itemIconTint="@drawable/drower_nav_color"
+        app:itemTextColor="@drawable/drower_nav_color"
+        app:menu="@menu/drower_nav_menu" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
