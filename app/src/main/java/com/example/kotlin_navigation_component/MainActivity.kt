@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
 
+
         navView.setNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.favFragment->Toast.makeText(this,"clicked",Toast.LENGTH_SHORT).show()
