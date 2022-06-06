@@ -18,7 +18,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:defaultNavHost="true"
-            app:layout_constraintBottom_toTopOf="@+id/bottomnavigationId"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -26,7 +26,7 @@
             app:navGraph="@navigation/navigation" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomnavigationId"
+            android:id="@+id/bottomNavigationView"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             app:labelVisibilityMode="labeled"
@@ -39,14 +39,15 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navViewDrower"
+        android:id="@+id/navigationView"
         android:layout_width="300dp"
         android:layout_height="match_parent"
+        app:labelVisibilityMode="labeled"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header"
         app:itemIconTint="@drawable/drower_nav_color"
         app:itemTextColor="@drawable/drower_nav_color"
-        app:menu="@menu/drower_nav_menu" />
+        app:menu="@menu/bottom_nav_menu" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

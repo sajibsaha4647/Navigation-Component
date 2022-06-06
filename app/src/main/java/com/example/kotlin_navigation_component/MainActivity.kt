@@ -12,12 +12,13 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI.setupWithNavController
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import java.nio.channels.AsynchronousFileChannel.open
+import androidx.navigation.ui.setupActionBarWithNavController as setupActionBarWithNavController1
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,50 +33,37 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //setup controller with fragment id
+        navController =findNavController(R.id.mainContainerid)
 
         //here is bottom navigation functions
-        navController =findNavController(R.id.mainContainerid)
-         bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomnavigationId)
+         bottomNavigationView = findViewById(R.id.bottomNavigationView)
         bottomNavigationView.setupWithNavController(navController)
+
+        //app side drawer menu setup
+
 
         //here is drower functions
         drawerLayout = findViewById(R.id.drawerLayout)
-        navigationView = findViewById(R.id.navViewDrower)
+        navigationView = findViewById(R.id.navigationView)
+
+
         navigationView.setupWithNavController(navController)
 
+
+
+        //toggle sidebar icon
         toggle = ActionBarDrawerToggle(this,drawerLayout, R.string.open,R.string.close)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        navigationView.setNavigationItemSelectedListener {
-            when(it.itemId){
-                R.id.favFragment-> {
-                    if (drawerLayout.isDrawerOpen(Gravity.LEFT)){
-                        drawerLayout.closeDrawer(GravityCompat.START)
-                    }else{
-                        drawerLayout.openDrawer(GravityCompat.START)
-                    }
-                    Toast.makeText(this, "clicked", Toast.LENGTH_SHORT).show()
-                }
-                R.id.musicFragment->{
-                    if (drawerLayout.isDrawerOpen(Gravity.LEFT)){
-                        drawerLayout.closeDrawer(GravityCompat.START)
-                    }else{
-                        drawerLayout.openDrawer(GravityCompat.START)
-                    }
-                }
-            }
-            true
-        }
-
-
-
 
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
         if(toggle.onOptionsItemSelected(item)){
             return  true
         }
